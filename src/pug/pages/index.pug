@@ -1,0 +1,184 @@
+extends ../layout
+
+
+block content
+    -
+        const cards =
+            [
+                {
+                    text: "I can always find what I’m looking for on Splice, whether it’s the exact sound I want or just a bit of inspiration.",
+                    name: "Andrew Huang",
+                    imgSrc: "image-card1.png"
+                },
+                {
+                    text: 'Finally a way to buy plugins that works. By paying a little at a time, producers can get legit access to the top VSTs.',
+                    name: 'KSHMR',
+                    imgSrc: 'image-card2.png'
+                },
+                {
+                    text: 'It’s been fun to dive into Splice’s creator community and explore tools that support my own creative process.',
+                    name: 'Kesha Lee',
+                    imgSrc: 'image-card3.png'
+                }
+            ];
+
+    - const chef = ['chef1.png','chef2.png','chef3.png','chef4.jpg'];
+
+    - 
+        const sales = 
+            [
+                {
+                    img: 'sale1.png',
+                    title: 'Без мяса? Здесь!',
+                    text: 'Самое время попробовать «Сырную» пиццу, «Маргариту», пиццу «Овощи и грибы», Пасту Четыре сыра, Томатный суп с гренками, Грибной Стартер, Рулетики с сыром, Картофель из печи, Картофельные оладьи или Греческий салат. Выберите свой вкус!',
+                    date: 'до 31 июля.'
+                },
+                {
+                    img: 'sale2.png',
+                    title: 'Без мяса? Здесь!',
+                    text: 'Самое время попробовать «Сырную» пиццу, «Маргариту», пиццу «Овощи и грибы», Пасту Четыре сыра, Томатный суп с гренками, Грибной Стартер, Рулетики с сыром, Картофель из печи, Картофельные оладьи или Греческий салат. Выберите свой вкус!',
+                    date: 'до 31 июля.'
+                },
+                {
+                    img: 'sale3.png',
+                    title: 'Без мяса? Здесь!',
+                    text: 'Самое время попробовать «Сырную» пиццу, «Маргариту», пиццу «Овощи и грибы», Пасту Четыре сыра, Томатный суп с гренками, Грибной Стартер, Рулетики с сыром, Картофель из печи, Картофельные оладьи или Греческий салат. Выберите свой вкус!',
+                    date: 'до 31 июля.'
+                }
+            ];
+
+    -
+        const events = [
+            {
+                title: 'Свадьбы',
+                img: 'wedding.png'
+            },
+            {
+                title: 'Корпоративы',
+                img: 'corporate.png'
+            }
+        ];
+
+    - const gallery = ['inside1.png','inside2.png','inside3.png', 'inside4.jpg']
+
+
+    .home__screen
+
+    section.home__menu(id="home__menu")
+        .tabs
+            .container
+                .tabs-wrap
+                    each item in menu
+                        button.tablink(data-name=`${item.name}`)= item.name
+        .tabs__content
+                each item in menu
+                    .tabcontent(class=`${item.name}`)
+                        .container
+                            h2.home__title= item.name
+                        .swiper-wrap
+                            .swiper.home__menu-swiper
+                                .swiper-wrapper
+                                    each slide in item.slides
+                                        .swiper-slide 
+                                            .dish-card__wrap
+                                                +dish-card(slide)
+                            .swiper-button-prev
+                            .swiper-button-next
+    section.home__about(id="home__about")
+        .container
+            .about__banner 
+                .about__descr 
+                    .about__title НАШЕ КАФЕ
+                    .about__text Мы расположены в одном из самых живописных мест города — на берегу реки, это ваш оазис в черте города, куда можно сбежать от шумного и пыльного мегаполиса. Мы, действительно уникальные, ведь все продумано до мелочей: проект построен из дикого закарпатского сруба, камин в основном зале ресторана и панорамные окна с видом на реку, уютные беседки на берегу реки и лучшая видовая террасса, шатер с посадкой на 200 человек, сказочный детский домик и бассейн.
+                .about__team
+                    .about__title 
+                        span.about__hat
+                        |НАШи повара
+                    .about__cards
+                        each item in chef
+                            .about__card-wrap
+                                .about__card
+                                    img.about__card-img(src=require(`../../assets/images/${item}`), alt="alt")
+
+    section.home__sales(id="home__sales")
+        .container 
+            h2.home__title акции
+            .sales__cards 
+                each sale in sales
+                    .sales__card-wrap 
+                        .sales__card 
+                            .sales__card-pic 
+                                img.sales__card-img(src=require(`../../assets/images/${sale.img}`), alt="alt")
+                            .sales__card-content
+                                .sales__card-title= sale.title
+                                .sales__card-text= sale.text
+                                .sales__card-date= sale.date
+
+    section.home__events 
+        .container 
+            .events 
+                .events__content
+                    .events__title ЧАСТНЫЕ МЕРОПРИЯТИЯ
+                    .events__cards 
+                        each event in events
+                            .events__card-wrap 
+                                .events__card 
+                                    .events__pic 
+                                        img.events__img(src=require(`../../assets/images/${event.img}`), alt="alt")
+                                    .events__card-title-wrap
+                                        .events__card-title
+                                            span= event.title
+            .events__gallery 
+                each item in gallery
+                    .events__image
+                        img.events__gallery-img(src=require(`../../assets/images/${item}`), alt="alt")
+
+    section.home__contacts(id="home__contacts")
+        .contacts__banner 
+        .container
+            .home__contacts-container
+                .contacts__content 
+                    .contacts__title КОНТАКТЫ
+                    .contacts__wrap
+                        each item in contacts
+                            .contacts__info 
+                                .contacts__icon
+                                    img.contacts__icon-img(src=require(`../../assets/images/${item.icon}`), alt="alt")
+                                .contacts__descr 
+                                    .contacts__suptitle= item.title
+                                    .contacts__text= item.text
+                    .contacts__footer 
+                        a.contacts__btn(href="") Заказать
+                        .contacts__phone 
+                            .contacts__num +7 (917) 510-57-59
+                            .contacts__suptitle Звоните или оставляйте заявку
+                    .conacts__socials 
+                        span Мы в соц сетях:
+                        each link in socials
+                            a.contacts__socials-link(href="")
+                                img.contacts__socials-img(src=require(`../../assets/images/${link}`), alt="alt")
+                .contacts__work 
+                    .contacts__work-row 
+                        .contacts__work-info
+                            .contacts__work-title График работы доставки:
+                            .contacts__work-text с 10:00-21:00
+                        .contacts__work-info
+                            .contacts__work-title График работы кафе:
+                            .contacts__work-text с 08:00-21:00
+                    .contacts__work-title Минимальный заказ:
+                    .contacts__work-text Бесплатная доставка пешим курьером при сумме заказа от 400 ₽ Доставка оператором такси от любой суммы заказа - по тарифам перевозчика.
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+

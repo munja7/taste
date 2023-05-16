@@ -1,0 +1,59 @@
+extends ../layout
+
+
+block content
+    -
+        const related = [
+            {
+                name: "КВАС АНАНАСОВЫЙ",
+                price: 512,
+                pic: "tepache.jpg",
+            },
+            {
+                name: "ГРИСССИНИ",
+                price: 300,
+                pic: "grissini.jpg",
+            },
+            {
+                name: "ПИЦЦА ПЕППЕРОНИ",
+                price: 512,
+                pic: "pepperoni.jpg",
+            },
+            {
+                name: "Утка",
+                price: 960,
+                pic: "duck.jpeg",
+            },
+        ];
+
+    .main 
+        .cart 
+            .container 
+                .cart__content
+                    .cart__head
+                        .cart__title.home__title КОРЗИНА
+                        .cart__suptitle
+                    .cart__products.cart__products-js
+                    .cart__related
+                        .cart__title-sm ДОБАВИТЬ К ЗАКАЗУ
+                        .cart__products.cart__list
+                            each item in related
+                                .cart__list-wrap
+                                    .cart__list-item 
+                                        .cart__related-pic 
+                                            img.cart__related-img(src=require(`../../assets/images/${item.pic}`), alt=item.title)
+                                        .cart__related-title= item.name
+                                        .cart__related-btn.cart-add-js 
+                                            span Добавить
+                                            .cart__card-btn.plusBtn.cart-related-btn
+                                        .cart__related-price= item.price 
+                                            | ₽
+                    .cart__total
+                        .cart__total-wrap.cart__products
+                            .cart__total-content
+                                .cart__total-price Итого: 
+                                    span 500 ₽ 
+                                .cart__total-text.cart__min-js
+                                .cart__total-text Минимальная сума заказа 1500 ₽
+                            input.cart__total-btn(type="button" value="Оформить заказ") 
+

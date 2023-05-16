@@ -1,0 +1,57 @@
+extends ../layout
+
+
+block content
+    .main
+        section.bludo__main 
+            .container
+                a(href="/").btn-back Вернуться назад
+                .bludo__card 
+                    +product-card()
+        section.bludo__other 
+            .container
+                .home__title С этим блюдом покупают
+                .bludo__other-cards 
+                    each item, index in menu
+                        if(index < 4)
+                            .bludo__card-wrap 
+                                +dish-card(item.slides[0])
+        section.bludo__contacts 
+            .contacts__banner 
+            .container
+                .home__contacts-container
+                    .contacts__content 
+                        .contacts__title КОНТАКТЫ
+                        .contacts__wrap
+                            each item in contacts
+                                .contacts__info 
+                                    .contacts__icon
+                                        img.contacts__icon-img(src=require(`../../assets/images/${item.icon}`), alt="alt")
+                                    .contacts__descr 
+                                        .contacts__suptitle= item.title
+                                        .contacts__text= item.text
+                        .contacts__footer 
+                            a.contacts__btn(href="") Заказать
+                            .contacts__phone 
+                                .contacts__num +7 (917) 510-57-59
+                                .contacts__suptitle Звоните или оставляйте заявку
+                        .conacts__socials 
+                            span Мы в соц сетях:
+                            each link in socials
+                                a.contacts__socials-link(href="")
+                                    img.contacts__socials-img(src=require(`../../assets/images/${link}`), alt="alt")
+                    .contacts__work 
+                        .contacts__work-row 
+                            .contacts__work-info
+                                .contacts__work-title График работы доставки:
+                                .contacts__work-text с 10:00-21:00
+                            .contacts__work-info
+                                .contacts__work-title График работы кафе:
+                                .contacts__work-text с 08:00-21:00
+                        .contacts__work-title Минимальный заказ:
+                        .contacts__work-text Бесплатная доставка пешим курьером при сумме заказа от 400 ₽ Доставка оператором такси от любой суммы заказа - по тарифам перевозчика.
+    
+
+
+
+

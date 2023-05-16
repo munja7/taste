@@ -1,0 +1,1 @@
+import './_dish-card.sass';

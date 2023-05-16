@@ -1,0 +1,46 @@
+-
+    const cal = 
+    [    
+        {
+            name: 'Белки',
+            cal: '17.23'
+        },
+        {
+            name: 'Жиры',
+            cal: '7.63'
+        },
+        {
+            name: 'Углеводы',
+            cal: '22.35'
+        },
+        {
+            name: 'Ккал',
+            cal: '234'
+        },
+        {
+            name: 'Вес',
+            cal: '210 г'
+        }
+    ]
+mixin product-card()
+    .product-card 
+        .product-card__col.col-left
+            img.product-card__img(src="", alt="alt")
+        .product-card__col
+            .product-card__content
+                .product-card__title 
+                p.product-card__text помидор, сыр фета, масло подсолнечное, капуста пекинская, перец сладкий красный, огурцы, оливки без косточек
+                .product-card__bottom
+                    .product-card__weight 
+                    .product-card__action 
+                        button.product-card__btn.cart-add-js
+                            .product-card__btn-title Корзина
+                            span
+                        .product-card__price 
+                    table.product-card__table 
+                        tr.product-card__row 
+                            each item in cal
+                                th.product-card__head= item.name
+                        tr.product-card__row 
+                            each item in cal
+                                td.product-card__col= item.cal

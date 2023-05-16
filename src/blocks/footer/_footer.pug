@@ -1,0 +1,16 @@
+mixin footer(menu= [])
+    footer.footer
+        .container
+            .footer__wrap
+                .footer__btn 
+                    a.btn-scroll-top(href="#")
+                .footer__info 
+                    .footer__logo Вкус есть
+                    .footer__copy © ООО СК «АПШЕРОН» Все права защищены. 2010-2020
+                    a.footer__policy(href="") Пользовательское соглашение
+                    a.footer__policy(href="") Политика конфиденциальности
+                .footer__nav
+                    ul.footer__menu 
+                        each item in menu
+                            li.footer__item 
+                                a.footer__link(href="")= item.name

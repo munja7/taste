@@ -1,0 +1,15 @@
+mixin dish-card(dish)
+    .card(id=dish.id)
+        .card__pic 
+            img.card__img(src=require(`../../assets/images/${dish.img}`), alt=dish.name)
+            .card__pic-overlay Подробнее
+        .card__descr
+            .card__head 
+                .card__name= dish.name
+                .card__weight= dish.weight
+            .card__text= dish.descr
+            .card__footer 
+                .card__price= dish.price + ' ₽'
+                .card__cart
+                    +cartBtn()
+

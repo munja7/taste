@@ -1,0 +1,232 @@
+.cart 
+.cart__content
+    padding-top: 35px
+    padding-bottom: 90px
+
+.cart__head
+    display: flex
+    align-items: baseline
+
+.cart__title
+    margin-right: 15px
+
+.cart__suptitle 
+    font-family: 'Gilroy-Medium'
+    font-size: 15px
+    line-height: 18px
+    text-transform: lowercase
+    color: #72A479
+
+.cart__products
+    background: linear-gradient(90deg, #494544 0%, #504B4A 100%)
+    border-radius: 10px
+    margin-bottom: 50px
+
+.cart__card-wrap:not(:last-child)
+    position: relative
+    &::after
+        content: ''
+        display: block
+        position: absolute
+        left: 0
+        bottom: 1px
+        width: 100%
+        height: 1px
+        background: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%)
+
+.cart__card
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 20px 40px 20px 20px
+
+.cart__card-col
+    width: 100%
+    max-width: 425px
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+.cart__card-pic
+    width: 120px
+    height: 90px
+    margin-right: 40px
+
+.cart__card-img
+.cart__card-descr
+.cart__card-title 
+    font-family: 'Gilroy-Bold'
+    font-size: 18px
+    line-height: 22px
+    margin-bottom: 5px
+
+.cart__card-text
+    max-width: 265px
+    font-size: 12px
+    line-height: 14px
+    color: #A6A7AB
+    
+.cart__card-amount 
+    display: flex
+    align-items: center
+
+.cart__card-btn
+    width: 27px
+    height: 27px
+    position: relative
+    border-radius: 50%
+    background-color: #72A479
+    cursor: pointer
+
+.minusBtn,
+.plusBtn,
+.deleteBtn
+    &::before
+        content: ''
+        width: 12px
+        height: 12px
+        display: block
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        background: url('../../assets/images/add.svg') no-repeat center
+
+.minusBtn
+    &::before
+        background: url('../../assets/images/minus.svg') no-repeat center
+
+.deleteBtn
+    transform: rotate(45deg)
+
+.cart__card-num
+    font-family: 'Gilroy-Bold'
+    font-size: 20px
+    line-height: 26px
+    margin: 0 10px
+
+.cart__card-price
+    font-family: 'Gilroy-Bold'
+    font-size: 20px
+    line-height: 24px
+
+.cart__related
+    margin-bottom: 80px
+    
+
+.cart__title-sm
+    font-family: 'Gilroy-Bold'
+    font-size: 25px
+    margin-bottom: 30px
+
+.cart__list
+    width: 80%
+    position: relative
+    margin: 0 auto
+    display: flex
+    align-items: center
+    &::after 
+        content: ''
+        display: block
+        position: absolute
+        width: 90%
+        height: 1px
+        left: 5%
+        bottom: -30px
+        background: rgba(255, 255, 255, 0.1)
+
+.cart__list-wrap
+    width: 25%
+
+.cart__list-item 
+    
+    padding: 20px 30px
+    display: flex
+    flex-direction: column
+    align-items: center
+
+.cart__related-pic 
+    width: 210px
+    height: 125px
+    border-radius: 10px
+    margin-bottom: 10px
+
+.cart__related-img
+    height: 100%
+    border-radius: 10px
+    object-fit: cover
+
+.cart__related-title 
+    font-family: 'Gilroy-Bold'
+    font-size: 14px
+    text-transform: uppercase
+
+.cart__related-btn
+    display: flex
+    align-items: center
+    width: 90px
+    justify-content: space-between
+    font-size: 12px
+    color: #C6CED1
+    cursor: pointer
+    margin-bottom: 10px
+
+.cart__related-btn span
+    display: inline-block
+
+.cart__related-price
+    font-family: 'Gilroy-Bold'
+    font-size: 12px
+
+.cart__total
+
+
+.cart__total-wrap  
+    width: 100%
+    max-width: 760px  
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 20px 30px
+    margin: 0 auto
+
+.cart__total-content
+.cart__total-price
+    font-family: "Gilroy-Medium"
+    font-size: 18px
+    line-height: 21px
+    margin-bottom: 5px
+    color: rgba(166, 167, 171, 1)
+
+.cart__total-price span
+    font-family: 'Gilroy-Bold'
+    font-size: 25px
+    line-height: 30px
+    color: #fff
+
+.cart__total-text 
+    font-family: 'Gilroy-Medium'
+    font-size: 12px
+
+.cart__total-text:not(:last-child)
+    margin-bottom: 10px
+
+.cart__total-btn
+    padding: 17px 50px
+    background: linear-gradient(114.93deg, #618967 5.11%, #72A479 94%)
+    border-radius: 10px
+    font-family: 'Gilroy-Bold'
+    font-size: 14px
+    line-height: 17px
+    cursor: pointer
+    border: 0
+    color: #fff
+
+.cart__total-btn:disabled
+  border: 1px solid #999999
+  background-color: #cccccc
+  color: #666666
+  cursor: not-allowed
+
+
+
